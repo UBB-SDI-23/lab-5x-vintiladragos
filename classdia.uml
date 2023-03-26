@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>Python</ID>
+  <OriginalElement>#D:/PyCharmProjects/mppufc/tradingCore</OriginalElement>
+  <nodes>
+    <node x="-176.0" y="382.0">tradingCore.serializers.StockSerializer</node>
+    <node x="110.0" y="382.0">tradingCore.serializers.TraderSerializer</node>
+    <node x="740.0" y="382.0">tradingCore.serializers.TransactionSerializer</node>
+    <node x="1370.0" y="382.0">tradingCore.serializers.StockPKSerializer</node>
+    <node x="190.75" y="535.0">django.db.models.base.Model</node>
+    <node x="872.5" y="456.0">django.core.validators.BaseValidator</node>
+    <node x="-176.0" y="614.0">tradingCore.models.Trader</node>
+    <node x="47.0" y="614.0">tradingCore.models.Transaction</node>
+    <node x="849.0" y="614.0">tradingCore.validators.GreaterThanValidator</node>
+    <node x="744.5" y="303.0">rest_framework.serializers.ModelSerializer</node>
+    <node x="176.25" y="456.0">django.db.models.base.ModelBase</node>
+    <node x="302.0" y="614.0">tradingCore.models.TraderOwnedStock</node>
+    <node x="606.0" y="614.0">tradingCore.models.Stock</node>
+    <node x="401.0" y="382.0">tradingCore.serializers.TransactionPKSerializer</node>
+    <node x="765.0000000000001" y="224.0">rest_framework.serializers.Serializer</node>
+    <node x="1063.0" y="382.0">tradingCore.serializers.TraderPKSerializer</node>
+    <node x="857.5" y="535.0">django.core.validators.MinValueValidator</node>
+    <node x="1672.0" y="382.0">tradingCore.serializers.TraderOwnedStockSerializer</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="tradingCore.serializers.TraderSerializer" target="rest_framework.serializers.ModelSerializer" relationship="REALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="245.5" y="357.0" />
+      <point x="891.5" y="357.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="tradingCore.serializers.TransactionSerializer" target="rest_framework.serializers.ModelSerializer" relationship="REALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="tradingCore.models.Trader" target="django.db.models.base.Model" relationship="REALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-74.5" y="589.0" />
+      <point x="304.25" y="589.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="rest_framework.serializers.ModelSerializer" target="rest_framework.serializers.Serializer" relationship="REALIZATION">
+      <point x="1.1368683772161603E-13" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="tradingCore.models.Transaction" target="django.db.models.base.Model" relationship="REALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="164.5" y="589.0" />
+      <point x="304.25" y="589.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="tradingCore.serializers.TraderPKSerializer" target="rest_framework.serializers.ModelSerializer" relationship="REALIZATION">
+      <point x="1.1368683772161603E-13" y="-14.5" />
+      <point x="1206.5" y="357.0" />
+      <point x="891.5" y="357.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="tradingCore.serializers.StockSerializer" target="rest_framework.serializers.ModelSerializer" relationship="REALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-43.0" y="357.0" />
+      <point x="891.5" y="357.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="django.core.validators.MinValueValidator" target="django.core.validators.BaseValidator" relationship="REALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="tradingCore.validators.GreaterThanValidator" target="django.core.validators.MinValueValidator" relationship="REALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="tradingCore.serializers.TransactionPKSerializer" target="rest_framework.serializers.ModelSerializer" relationship="REALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="560.5" y="357.0" />
+      <point x="891.5" y="357.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="tradingCore.models.Stock" target="django.db.models.base.Model" relationship="REALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="705.0" y="589.0" />
+      <point x="304.25" y="589.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="tradingCore.serializers.TraderOwnedStockSerializer" target="rest_framework.serializers.ModelSerializer" relationship="REALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="1848.0" y="357.0" />
+      <point x="891.5" y="357.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="django.db.models.base.Model" target="django.db.models.base.ModelBase" relationship="INSTANCEOF">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="tradingCore.models.TraderOwnedStock" target="django.db.models.base.Model" relationship="REALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="444.0" y="589.0" />
+      <point x="304.25" y="589.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="tradingCore.serializers.StockPKSerializer" target="rest_framework.serializers.ModelSerializer" relationship="REALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="1511.0" y="357.0" />
+      <point x="891.5" y="357.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.49459459459459465" showDependencies="false" x="786.7602185792347" y="502.0765027322404" />
+  <SelectedNodes />
+  <Categories />
+</Diagram>
+

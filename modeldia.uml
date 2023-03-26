@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DjangoModelDependency</ID>
+  <OriginalElement>#mppufc</OriginalElement>
+  <nodes>
+    <node x="-427.99999999999994" y="70.0">tradingCore.models.Stock</node>
+    <node x="-60.51388888888886" y="-11.0">django.db.models.base.Model</node>
+    <node x="-48.51388888888886" y="70.0">tradingCore.models.Trader</node>
+    <node x="142.5" y="151.0">tradingCore.models.Transaction</node>
+    <node x="-257.125" y="138.66666666666663">tradingCore.models.TraderOwnedStock</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="tradingCore.models.TraderOwnedStock" target="tradingCore.models.Stock" relationship="ForeignKey">
+      <point x="0.0" y="-14.5" />
+      <point x="-115.125" y="120.0" />
+      <point x="-328.99999999999994" y="120.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="tradingCore.models.Trader" target="django.db.models.base.Model" relationship="OneToOne">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="tradingCore.models.TraderOwnedStock" target="django.db.models.base.Model" relationship="OneToOne">
+      <point x="0.0" y="-14.5" />
+      <point x="-115.125" y="44.0" />
+      <point x="52.98611111111114" y="44.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="tradingCore.models.Stock" target="django.db.models.base.Model" relationship="OneToOne">
+      <point x="0.0" y="-14.5" />
+      <point x="-328.99999999999994" y="44.0" />
+      <point x="52.98611111111114" y="44.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="tradingCore.models.TraderOwnedStock" target="tradingCore.models.Trader" relationship="ForeignKey">
+      <point x="0.0" y="-14.5" />
+      <point x="-115.125" y="130.0" />
+      <point x="52.98611111111114" y="130.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="tradingCore.models.Transaction" target="tradingCore.models.Trader" relationship="ForeignKey">
+      <point x="0.0" y="-14.5" />
+      <point x="260.0" y="120.0" />
+      <point x="153.66666666666663" y="120.0" />
+      <point x="100.68055555555549" y="14.458333333333343" />
+    </edge>
+    <edge source="tradingCore.models.Transaction" target="django.db.models.base.Model" relationship="OneToOne">
+      <point x="0.0" y="-14.5" />
+      <point x="260.0" y="130.0" />
+      <point x="333.7361111111111" y="130.0" />
+      <point x="333.7361111111111" y="44.0" />
+      <point x="52.98611111111114" y="44.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.5" showDependencies="false" x="5.333333333333314" y="94.5" />
+  <SelectedNodes>
+    <node>django.db.models.base.Model</node>
+  </SelectedNodes>
+  <Categories />
+</Diagram>
+
