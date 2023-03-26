@@ -14,7 +14,6 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 import graphviz
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -27,7 +26,7 @@ SECRET_KEY = 'django-insecure-do_z+g)72uvu%c#9yn7((eg7he4&z@tr#1!k!ki9uyf2f*!2o(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -41,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tradingCore',
     'rest_framework',
-    'django_extensions'
+    'corsheaders',
+    'django_extensions',
+
 ]
 
 MIDDLEWARE = [
@@ -52,7 +53,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'mppufc.urls'
 
