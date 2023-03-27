@@ -135,17 +135,32 @@ def transaction_list(request, pk):
 
     elif request.method == 'POST':
         data = JSONParser().parse(request)
-        data['trader_id'] = pk
-        serializer = TransactionSerializer(data=data)
-        if serializer.is_valid():
-            amount = serializer.initial_data['amount']
-            if serializer.initial_data['type'] == 'deposit':
-                Trader.objects.filter(pk=pk).update(balance=F('balance') + amount)
-            else:
-                Trader.objects.filter(pk=pk).update(balance=F('balance') - amount)
-            serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
+        if isinstance(data, list):
+            for item in data:
+                item['trader_id'] = pk
+            serializer = TransactionSerializer(data=data, many=True)
+            if serializer.is_valid():
+                for item in serializer.initial_data:
+                    amount = item['amount']
+                    if item['type'] == 'deposit':
+                        Trader.objects.filter(pk=pk).update(balance=F('balance') + amount)
+                    else:
+                        Trader.objects.filter(pk=pk).update(balance=F('balance') - amount)
+                serializer.save()
+                return JsonResponse(serializer.data, status=201, safe=False)
+            return JsonResponse(serializer.errors, status=400)
+        else:
+            data['trader_id'] = pk
+            serializer = TransactionSerializer(data=data)
+            if serializer.is_valid():
+                amount = serializer.initial_data['amount']
+                if serializer.initial_data['type'] == 'deposit':
+                    Trader.objects.filter(pk=pk).update(balance=F('balance') + amount)
+                else:
+                    Trader.objects.filter(pk=pk).update(balance=F('balance') - amount)
+                serializer.save()
+                return JsonResponse(serializer.data, status=201)
+            return JsonResponse(serializer.errors, status=400)
 
 
 @csrf_exempt
@@ -197,7 +212,7 @@ def trader_owned_stock_list(request, trader_id):
         serializer = TraderOwnedStockSerializer(owned_stocks, many=True)
         return JsonResponse(serializer.data, safe=False)
 
-    elif request.method == 'POST':
+    elif request.method == 'PUT':
         data = JSONParser().parse(request)
         data['trader_id'] = trader_id
         serializer = TraderOwnedStockSerializer(data=data)
